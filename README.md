@@ -1,20 +1,20 @@
 # BEAR-Hunter-Script-Architect
 A professional-grade utility for generating customized Kali NetHunter chroot installation and boot scripts for Termux and Magisk-rooted environments.
 
-Updating NetHunter scripts for **Magisk v30+** (and current Android 14/15 versions) requires addressing significant changes in Magisk's architecture, specifically regarding **Mount Namespaces**, the removal of the `/sbin` folder, and more aggressive "Phantom Process" management.
+Updating NetHunter scripts for **BEAR-Hunter-Magisk-Architect-Patcher** (and current Android 14/15 versions) requires addressing significant changes in Magisk's architecture, specifically regarding **Mount Namespaces**, the removal of the `/sbin` folder, and more aggressive "Phantom Process" management.
 
 Here is the updated script, followed by a technical breakdown of the improvements.
 
-### Updated Script: NetHunter Architecture v30+
+### Updated Script: BEAR-Hunter-Magisk-Architect-Patcher Architecture arm64 v30+
 
 ```bash
 #!/data/data/com.termux/files/usr/bin/bash
-# Mode: Optimized Update for Magisk v30+ & Android 12/13/14/15
+# Mode: Optimized Update for Magisk v30.6+ & Android 12/13/14/15
 # Enhanced for Global Mount Namespace Persistence
 set -e
 
 # --- Variable Definitions ---
-FACTION="BEAR Hunter Script Architect"
+FACTION="BEAR-Hunter-Magisk-Architect-Patcher"
 CHROOT_DIR="/data/local/nhsystem/kalifs"
 NH_PATH="/data/data/com.offsec.nhterm/files/usr/bin/kali"
 
@@ -101,7 +101,7 @@ echo "------------------------------------------------------------"
 ### Technical Advice & Improvements
 
 #### 1. Namespace Isolation (`-mm` vs `--mount-master`)
-In older Magisk versions, `--mount-master` was the standard. In v30+, Magisk has refined its handling of namespaces. 
+In older Magisk versions, `--mount-master` was the standard. In v30.6+, Magisk has refined its handling of namespaces. 
 *   **The Problem:** By default, every app (including Termux) has its own "Mount Namespace." If you mount Kali's `/proc` or `/sys` inside Termux's namespace, the NetHunter Terminal app won't see them, leading to "Permission Denied" errors.
 *   **The Fix:** Using `su -mm` or `nsenter -t 1 -m` forces the script to execute in the **Global/Root Namespace**. This makes the Kali chroot visible to all apps on the system.
 

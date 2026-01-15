@@ -7,14 +7,16 @@ Here is the updated script, followed by a technical breakdown of the improvement
 
 ### Updated Script: BEAR-Hunter-Magisk-Architect-Patcher Architecture arm64 v30+
 
-```bash
+```
+
+bash
 #!/data/data/com.termux/files/usr/bin/bash
 # Mode: Optimized Update for Magisk v30.6+ & Android 12/13/14/15
 # Enhanced for Global Mount Namespace Persistence
 set -e
 
 # --- Variable Definitions ---
-FACTION="BEAR-Hunter-Magisk-Architect-Patcher"
+FACTION="Architect-Hunter-Magisk"
 CHROOT_DIR="/data/local/nhsystem/kalifs"
 NH_PATH="/data/data/com.offsec.nhterm/files/usr/bin/kali"
 
@@ -94,6 +96,8 @@ echo "------------------------------------------------------------"
 echo "[+] Update Complete for Magisk v30+ Environment."
 echo "[+] Tip: If Kali closes unexpectedly, check 'Disable Child Process Restrictions' in Developer Options."
 echo "------------------------------------------------------------"
+
+
 ```
 
 ---

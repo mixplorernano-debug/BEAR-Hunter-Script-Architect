@@ -1,11 +1,11 @@
-# BEAR-Hunter-Script-Architect
+# Architect-Hunter-Magisk v30.6+
 A professional-grade utility for generating customized Kali NetHunter chroot installation and boot scripts for Termux and Magisk-rooted environments.
 
 Updating NetHunter scripts for **BEAR-Hunter-Magisk-Architect-Patcher** (and current Android 14/15 versions) requires addressing significant changes in Magisk's architecture, specifically regarding **Mount Namespaces**, the removal of the `/sbin` folder, and more aggressive "Phantom Process" management.
 
 Here is the updated script, followed by a technical breakdown of the improvements.
 
-### Updated Script: BEAR-Hunter-Magisk-Architect-Patcher Architecture arm64 v30+
+### Updated Script: Architect-Hunter-Magisk | Architecture arm64 v30.6+
 
 ```
 
